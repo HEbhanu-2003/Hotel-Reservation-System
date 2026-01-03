@@ -9,21 +9,27 @@ public class CustomerCheckInView extends JFrame {
     private JTextField textField1;
     private JFormattedTextField formattedTextField1;
     private JButton allocateRoomButton;
-    private JComboBox<String> roomType;
     private JRadioButton maleRadioButton;
     private JRadioButton femaleRadioButton;
     private JButton updateAllocationButton;
     private JPanel panel1;
-    private JComboBox<String> roomNumber;
-    private JComboBox<String> bedType;
-    private JFormattedTextField priceField;
+    private JTextField price;
+    private JTextField roomNumber;
+    private JTextField roomType;
+    private JTextField bedType;
 
-    public CustomerCheckInView() {
+
+    public CustomerCheckInView(int v1,String v2, String v3,double v4){
 
         this.setTitle("Customer Check In");
         this.setSize(890,550);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+
+        roomNumber.setText(String.valueOf(v1));
+        roomType.setText(v2);
+        bedType.setText(v3);
+        price.setText(String.valueOf(v4));
 
         Container container = this.getContentPane();
         container.add(panel1);

@@ -29,7 +29,7 @@ public class ManageRoomsView extends JFrame {
         roomsType.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                double calCalculatePrice = 0.0;
+                int calCalculatePrice = 0;
 
                 int days = Integer.parseInt(daysField.getText());
                 String room = roomsType.getSelectedItem().toString();
@@ -57,12 +57,12 @@ public class ManageRoomsView extends JFrame {
                         calCalculatePrice = days * 7000;
                     }
                 }
-                priceField.setText(String.valueOf(calCalculatePrice));
+                priceField.setText(Integer.toString(calCalculatePrice));
             }
         });
         bedType.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                double calCalculatePrice = 0.0;
+                int calCalculatePrice = 0;
 
                 int days = Integer.parseInt(daysField.getText());
                 String room = roomsType.getSelectedItem().toString();
@@ -90,12 +90,12 @@ public class ManageRoomsView extends JFrame {
                         calCalculatePrice = days * 7000;
                     }
                 }
-                priceField.setText(String.valueOf(calCalculatePrice));
+                priceField.setText(Integer.toString(calCalculatePrice));
             }
         });
         daysField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                double calCalculatePrice = 0.0;
+                int calCalculatePrice = 0;
 
                 int days = Integer.parseInt(daysField.getText());
                 String room = roomsType.getSelectedItem().toString();
@@ -123,24 +123,31 @@ public class ManageRoomsView extends JFrame {
                         calCalculatePrice = days * 7000;
                     }
                 }
-                priceField.setText(String.valueOf(calCalculatePrice));
+                priceField.setText(Integer.toString(calCalculatePrice));
             }
         });
     }
-    public int getRoomNumberField(){
-        return Integer.parseInt(roomNumberField.getText());
+
+    public int getDaysField() {
+        return Integer.parseInt(daysField.getText().trim());
+
     }
-    public int getDaysField(){
-        return Integer.parseInt(daysField.getText());
-    }
-    public String getRoomType(){
+
+    public String getRoomType() {
         return roomsType.getSelectedItem().toString();
     }
-    public String getBedType(){
+
+    public String getBedType() {
         return bedType.getSelectedItem().toString();
     }
-    public Double getPriceField(){
-        return Double.parseDouble(priceField.getText());
+
+    public float getPriceField() {
+
+        return Integer.parseInt(priceField.getText().trim());
+    }
+
+    public int getRoomNumberField() {
+        return Integer.parseInt(roomNumberField.getText().trim());
     }
     public void addRoomActionListener(ActionListener Listener) {
         addRoomButton.addActionListener(Listener);

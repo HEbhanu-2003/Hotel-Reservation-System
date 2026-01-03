@@ -195,44 +195,6 @@
               <text value="Allocate Room"/>
             </properties>
           </component>
-          <component id="1fe19" class="javax.swing.JComboBox" binding="bedType">
-            <constraints>
-              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-463361"/>
-              <model/>
-            </properties>
-          </component>
-          <component id="af900" class="javax.swing.JFormattedTextField" binding="priceField">
-            <constraints>
-              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-463361"/>
-              <editable value="false"/>
-            </properties>
-          </component>
-          <component id="98695" class="javax.swing.JComboBox" binding="roomType">
-            <constraints>
-              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-463361"/>
-              <model/>
-            </properties>
-          </component>
-          <component id="3e960" class="javax.swing.JComboBox" binding="roomNumber">
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-463361"/>
-              <model/>
-            </properties>
-          </component>
           <component id="b4b5d" class="javax.swing.JButton" binding="updateAllocationButton" default-binding="true">
             <constraints>
               <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -298,6 +260,50 @@
               <font name="Arial Black" size="18" style="1"/>
               <foreground color="-200961"/>
               <text value="Delete Allocation"/>
+            </properties>
+          </component>
+          <component id="6317" class="javax.swing.JTextField" binding="roomNumber">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-463361"/>
+              <editable value="false"/>
+            </properties>
+          </component>
+          <component id="30cc" class="javax.swing.JTextField" binding="roomType">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-463361"/>
+              <editable value="false"/>
+            </properties>
+          </component>
+          <component id="570a5" class="javax.swing.JTextField" binding="bedType">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-463361"/>
+              <editable value="false"/>
+            </properties>
+          </component>
+          <component id="f78bc" class="javax.swing.JTextField" binding="price">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-463361"/>
+              <editable value="false"/>
             </properties>
           </component>
         </children>

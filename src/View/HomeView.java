@@ -15,6 +15,10 @@ public class HomeView extends JFrame{
     private JButton logOutButton;
     private JButton cutomerCheckOutButton;
 
+    ManageRoomsView manageRoomsView;
+    CustomerCheckInView  customerCheckInView;
+    AddMealsItemsView addMealsItemsView;
+
     public HomeView() {
 
         this.setTitle("Home View");
@@ -26,20 +30,46 @@ public class HomeView extends JFrame{
         Container contentPane = this.getContentPane();
         contentPane.add(panel2);
 
-        manageRoomButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new ManageRoomsView();
+        manageRoomButton.addActionListener(e -> {
+            manageRoomsView = new ManageRoomsView();
+            manageRoomsView.setVisible(true);
+        });
 
+        cutomerCheckInButton.addActionListener(e -> {
+            if (manageRoomsView != null) {
+                new CustomerCheckInView(
+                        manageRoomsView.getRoomNumberField(),
+                        manageRoomsView.getRoomType(),
+                        manageRoomsView.getBedType(),
+                        manageRoomsView.getPriceField()
+                ).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this,"Please First Add Your Room");
             }
         });
-        addMealsItemsButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new AddMealsItemsView();
+
+        addMealsItemsButton.addActionListener(e -> {
+            if (manageRoomsView != null) {
+                new AddMealsItemsView(
+                        manageRoomsView.getRoomNumberField(),
+                        manageRoomsView.getRoomType(),
+                        manageRoomsView.getBedType(),
+                        manageRoomsView.getPriceField()
+                ).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this,"Please First Add customer checking");
             }
         });
-        paymentButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new PaymentVIew();
+        paymentButton.addActionListener(e -> {
+            if (manageRoomsView != null) {
+                new PaymentVIew(
+                        manageRoomsView.getRoomNumberField(),
+                        manageRoomsView.getRoomType(),
+                        manageRoomsView.getBedType(),
+                        manageRoomsView.getPriceField()
+                ).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this,"Please First Add meals");
             }
         });
         cutomerCheckOutButton.addActionListener(new ActionListener() {
@@ -52,12 +82,5 @@ public class HomeView extends JFrame{
                 System.exit(0);
             }
         });
-        cutomerCheckInButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new CustomerCheckInView();
-            }
-        });
-
-
     }
 }
