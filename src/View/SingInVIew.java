@@ -69,6 +69,13 @@ public class SingInVIew extends JFrame {
                     new DashBoardView();
                     dispose();
                 }
+
+                else if (roleComboBox.getSelectedItem().toString().equals("Admin") && adminUsername.equals("gthineth") && adminPassword.equals("thineth123")) {
+                    JOptionPane.showMessageDialog(null, "Admin successfully logged","Done",JOptionPane.INFORMATION_MESSAGE);
+                    new DashBoardView();
+                    dispose();
+                }
+
                 else {
                     JOptionPane.showMessageDialog(
                             SingInVIew.this,
