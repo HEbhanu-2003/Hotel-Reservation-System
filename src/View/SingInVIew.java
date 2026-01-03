@@ -20,7 +20,7 @@ public class SingInVIew extends JFrame {
     private JComboBox<String> roleComboBox;
 
     public SingInVIew() {
-        this.setTitle("SingInVIew");
+        this.setTitle("Sing In");
         this.setSize(650,450);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);

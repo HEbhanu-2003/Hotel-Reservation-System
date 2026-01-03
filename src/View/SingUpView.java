@@ -16,7 +16,7 @@ public class SingUpView extends JFrame {
     public JPasswordField passwordField1;
 
     public SingUpView(){
-        this.setTitle("SingUpModel");
+        this.setTitle("Sing Up Model");
         this.setSize(650,450);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);

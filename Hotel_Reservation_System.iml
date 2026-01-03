@@ -19,7 +19,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../mysql-connector-java-8.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/mysql-connector-java-8.0.30.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,11 +28,12 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../NIBM/DSE/First Year/ST 4/EAD/mysql-connector-java-8.0.30.jar!/" />
+          <root url="jar://$USER_HOME$/NIBM/DSE/First Year/ST 4/EAD/mysql-connector-java-8.0.30.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-j-9.5.0" level="project" />
   </component>
 </module>
