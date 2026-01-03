@@ -1,8 +1,5 @@
 package View;
 
-import Controller.ManageRoomsController;
-import Model.ManageRoomsModel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,9 +32,7 @@ public class HomeView extends JFrame{
 
         manageRoomButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ManageRoomsView view1 = new ManageRoomsView();
-                ManageRoomsModel model1 = new ManageRoomsModel();
-                new ManageRoomsController(view1, model1);
+                new ManageRoomsView();
 
             }
         });
