@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class HomeView extends JFrame{
     private JPanel panel2;
@@ -14,14 +15,9 @@ public class HomeView extends JFrame{
     private JButton logOutButton;
     private JButton cutomerCheckOutButton;
 
-    private String storedVal1 = "";
-    private String storedVal2 = "";
-    private String storedVal3 = "";
-    private String storedVal4 = "";
-
     public HomeView() {
 
-        this.setTitle("HomeView");
+        this.setTitle("Home View");
         this.setSize(1920, 1080);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -64,7 +60,4 @@ public class HomeView extends JFrame{
 
 
     }
-
-
-
 }
