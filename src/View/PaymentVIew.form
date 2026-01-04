@@ -294,6 +294,7 @@
                 <properties>
                   <background color="-463361"/>
                   <editable value="false"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="b1bd3" class="javax.swing.JLabel">
