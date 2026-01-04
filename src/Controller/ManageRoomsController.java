@@ -27,8 +27,6 @@ public class ManageRoomsController {
             model.setBeds(view.getBedType());
             model.setDays(view.getDaysField());
             model.setPrice(view.getPriceField());
-            //double total = model.calculatePrice();
-            //System.out.println(total);
 
             if (model.addRoom()) {
                 JOptionPane.showMessageDialog(null, "Room added successfully", "Add Room", JOptionPane.INFORMATION_MESSAGE);
@@ -45,8 +43,6 @@ public class ManageRoomsController {
             model.setBeds(view.getBedType());
             model.setDays(view.getDaysField());
             model.setPrice(view.getPriceField());
-            //double total = model.calculatePrice();
-            //System.out.println(total);
 
             try {
 

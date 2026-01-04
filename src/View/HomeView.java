@@ -1,10 +1,14 @@
 package View;
 
+import Controller.CustomerCheckInController;
+import Controller.ManageRoomsController;
+import Model.CustomerCheckInModel;
+import Model.ManageRoomsModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 
 public class HomeView extends JFrame{
     private JPanel panel2;
@@ -16,8 +20,6 @@ public class HomeView extends JFrame{
     private JButton cutomerCheckOutButton;
 
     ManageRoomsView manageRoomsView;
-    CustomerCheckInView  customerCheckInView;
-    AddMealsItemsView addMealsItemsView;
 
     public HomeView() {
 
@@ -32,21 +34,34 @@ public class HomeView extends JFrame{
 
         manageRoomButton.addActionListener(e -> {
             manageRoomsView = new ManageRoomsView();
+            ManageRoomsModel model = new ManageRoomsModel();
+            new ManageRoomsController(manageRoomsView, model);
             manageRoomsView.setVisible(true);
-        });
 
+        });
         cutomerCheckInButton.addActionListener(e -> {
+
             if (manageRoomsView != null) {
-                new CustomerCheckInView(
-                        manageRoomsView.getRoomNumberField(),
-                        manageRoomsView.getRoomType(),
-                        manageRoomsView.getBedType(),
-                        manageRoomsView.getPriceField()
-                ).setVisible(true);
+
+                CustomerCheckInView customerCheckInView =
+                        new CustomerCheckInView(
+                                manageRoomsView.getRoomNumberField(),
+                                manageRoomsView.getRoomType(),
+                                manageRoomsView.getBedType(),
+                                manageRoomsView.getPriceField()
+                        );
+
+                CustomerCheckInModel model = new CustomerCheckInModel();
+
+                new CustomerCheckInController(customerCheckInView, model);
+
+                customerCheckInView.setVisible(true);
+
             } else {
-                JOptionPane.showMessageDialog(this,"Please First Add Your Room");
+                JOptionPane.showMessageDialog(this, "Please First Add Your Room");
             }
         });
+
 
         addMealsItemsButton.addActionListener(e -> {
             if (manageRoomsView != null) {
@@ -57,7 +72,7 @@ public class HomeView extends JFrame{
                         manageRoomsView.getPriceField()
                 ).setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this,"Please First Add customer checking");
+                JOptionPane.showMessageDialog(this, "Please First Add customer checking");
             }
         });
         paymentButton.addActionListener(e -> {
@@ -69,7 +84,7 @@ public class HomeView extends JFrame{
                         manageRoomsView.getPriceField()
                 ).setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this,"Please First Add meals");
+                JOptionPane.showMessageDialog(this, "Please First Add meals");
             }
         });
         cutomerCheckOutButton.addActionListener(new ActionListener() {

@@ -20,40 +20,62 @@ public class CustomerCheckInController {
 
     class AllocateRoomButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (view.getCustomerName().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "name field cannot be empty", JOptionPane.WARNING_MESSAGE);
+            String name = view.getCustomerName().trim();
+            if (name.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Customer name cannot be empty", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getAddress().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "address field cannot be empty", JOptionPane.WARNING_MESSAGE);
+            if (!name.matches("[a-zA-Z ]+")) {
+                JOptionPane.showMessageDialog(null, "Error", "Customer name cannot contain numbers or symbols", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getMobileNumber().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "mobile number cannot be empty", JOptionPane.WARNING_MESSAGE);
+
+            String mobile = view.getMobileNumber().trim();
+            if (mobile.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Mobile number cannot be empty", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getNationality().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "nationality cannot be empty", JOptionPane.WARNING_MESSAGE);
+            if (!mobile.matches("\\d+")) {
+                JOptionPane.showMessageDialog(null, "Error", "Mobile number must contain only digits", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getSelectedGender() == null) {
-                JOptionPane.showMessageDialog(null, "Try Again", "gender must be selected", JOptionPane.WARNING_MESSAGE);
+            if (mobile.length() != 10) {
+                JOptionPane.showMessageDialog(null, "Error", "Mobile number must be exactly 10 digits", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getRoomNumber().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "room number cannot be empty", JOptionPane.WARNING_MESSAGE);
+
+            String nationality = view.getNationality().trim();
+            if (nationality.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Nationality cannot be empty", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getRoomType().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "room type cannot be empty", JOptionPane.WARNING_MESSAGE);
+            if (!nationality.matches("[a-zA-Z ]+")) {
+                JOptionPane.showMessageDialog(null, "Error", "Nationality can only have letters", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getBedType().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "bed type cannot be empty", JOptionPane.WARNING_MESSAGE);
+
+            if (view.getSelectedGender().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Please select the gender", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else if (view.getIdProof().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Try Again", "Id proof is mandatory", JOptionPane.WARNING_MESSAGE);
+
+            String idProof = view.getIdProof().trim();
+            if (idProof.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Id number cannot be empty", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (idProof.matches(".*[a-zA-Z].*")) {
+                JOptionPane.showMessageDialog(null, "Error", "Id number cannot only have letters", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String address = view.getAddress().trim();
+            if (address.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error", "Address cannot be empty", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (!address.matches(".*[a-zA-Z].*")) {
+                JOptionPane.showMessageDialog(null, "Error", "Address cannot be only numbers", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
