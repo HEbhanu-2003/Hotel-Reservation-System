@@ -68,17 +68,6 @@
                   <text value="Update Allocation "/>
                 </properties>
               </component>
-              <component id="c7925" class="javax.swing.JTextField" binding="price">
-                <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-463361"/>
-                  <editable value="false"/>
-                </properties>
-              </component>
               <component id="2e833" class="javax.swing.JTextField" binding="roomNumber">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -138,6 +127,14 @@
                   <text value="Type"/>
                 </properties>
               </component>
+              <component id="e94d7" class="javax.swing.JTextField" binding="priceField">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
             </children>
           </grid>
           <grid id="1e0ae" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -158,11 +155,18 @@
                   <text value="Fruits"/>
                 </properties>
               </component>
-              <component id="43e59" class="javax.swing.JComboBox" binding="comboBox5" default-binding="true">
+              <component id="43e59" class="javax.swing.JComboBox" binding="fruits">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
+                </properties>
               </component>
               <component id="b17d4" class="javax.swing.JLabel">
                 <constraints>
@@ -184,17 +188,31 @@
                   <text value="Noodles"/>
                 </properties>
               </component>
-              <component id="5af53" class="javax.swing.JComboBox" binding="comboBox6" default-binding="true">
+              <component id="5af53" class="javax.swing.JComboBox" binding="noodles">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
+                </properties>
               </component>
-              <component id="d205d" class="javax.swing.JComboBox" default-binding="true">
+              <component id="d205d" class="javax.swing.JComboBox" binding="drinks">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
+                </properties>
               </component>
               <component id="675c4" class="javax.swing.JLabel">
                 <constraints>
@@ -226,25 +244,44 @@
                   <text value="Pizza"/>
                 </properties>
               </component>
-              <component id="a03bd" class="javax.swing.JComboBox" default-binding="true">
+              <component id="a03bd" class="javax.swing.JComboBox" binding="pizza">
                 <constraints>
                   <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
+                </properties>
               </component>
-              <component id="48a84" class="javax.swing.JComboBox" default-binding="true">
+              <component id="48a84" class="javax.swing.JComboBox" binding="juse">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <model/>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
                 </properties>
               </component>
-              <component id="12673" class="javax.swing.JComboBox" default-binding="true">
+              <component id="12673" class="javax.swing.JComboBox" binding="cofee">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <model>
+                    <item value="0"/>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                  </model>
+                </properties>
               </component>
             </children>
           </grid>
@@ -283,23 +320,44 @@
               <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="535b4" class="javax.swing.JComboBox" binding="comboBox3" default-binding="true">
+          <component id="535b4" class="javax.swing.JComboBox" binding="lunch">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <model>
+                <item value="0"/>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+            </properties>
           </component>
-          <component id="6dd3e" class="javax.swing.JComboBox" binding="comboBox4" default-binding="true">
+          <component id="6dd3e" class="javax.swing.JComboBox" binding="diner">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <model>
+                <item value="0"/>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+            </properties>
           </component>
-          <component id="d207c" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+          <component id="d207c" class="javax.swing.JComboBox" binding="breakFirst">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <model>
+                <item value="0"/>
+                <item value="1"/>
+                <item value="2"/>
+                <item value="3"/>
+              </model>
+            </properties>
           </component>
         </children>
       </grid>

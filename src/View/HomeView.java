@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class HomeView extends JFrame{
     private JPanel panel2;
@@ -20,6 +21,8 @@ public class HomeView extends JFrame{
     private JButton cutomerCheckOutButton;
 
     ManageRoomsView manageRoomsView;
+    CustomerCheckInView  customerCheckInView;
+    AddMealsItemsView addMealsItemsView;
 
     public HomeView() {
 
@@ -34,8 +37,8 @@ public class HomeView extends JFrame{
 
         manageRoomButton.addActionListener(e -> {
             manageRoomsView = new ManageRoomsView();
-            ManageRoomsModel model = new ManageRoomsModel();
-            new ManageRoomsController(manageRoomsView, model);
+            ManageRoomsModel model1 = new ManageRoomsModel();
+            new ManageRoomsController(manageRoomsView, model1);
             manageRoomsView.setVisible(true);
 
         });
@@ -97,5 +100,7 @@ public class HomeView extends JFrame{
                 System.exit(0);
             }
         });
+
+
     }
 }
