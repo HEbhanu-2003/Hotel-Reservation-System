@@ -97,7 +97,7 @@ public class CustomerCheckInModel {
 
     public boolean deleteRoomAllocation() throws SQLException, Exception {
         Connection connection = RegistrationConnection.getDatabaseConnection();
-        String sql = "DELETE * FROM customercheckin WHERE idProof = ?";
+        String sql = "DELETE FROM customercheckin WHERE idProof = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
 
         ps.setString(1, idProof);
