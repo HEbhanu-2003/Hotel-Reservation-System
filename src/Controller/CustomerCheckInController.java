@@ -105,6 +105,7 @@ public class CustomerCheckInController {
 
                 if (success) {
                     JOptionPane.showMessageDialog(null, "Room allocated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    view.dispose();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Room allocation failed", "Error", JOptionPane.ERROR_MESSAGE);
@@ -204,6 +205,7 @@ public class CustomerCheckInController {
 
                 if (success) {
                     JOptionPane.showMessageDialog(null, "Room updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    view.dispose();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Room failed to update", "Error", JOptionPane.ERROR_MESSAGE);
@@ -248,6 +250,7 @@ public class CustomerCheckInController {
 
                 if (success) {
                     JOptionPane.showMessageDialog(null, "Room deleted successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    view.dispose();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Room failed to delete", "Error", JOptionPane.ERROR_MESSAGE);
