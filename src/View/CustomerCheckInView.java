@@ -27,6 +27,7 @@ public class CustomerCheckInView extends JFrame {
         this.setTitle("Customer Check In");
         this.setSize(890,550);
         this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         roomNumber.setText(String.valueOf(v1));
         roomType.setText(v2);
