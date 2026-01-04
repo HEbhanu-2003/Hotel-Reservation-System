@@ -81,7 +81,7 @@ public class CustomerCheckInModel {
 
     public boolean updateRoomAllocation() throws SQLException, Exception {
         Connection connection = RegistrationConnection.getDatabaseConnection();
-        String sql = "UPDATE customercheckin cutomerName = ?, address = ?, mobileNumber = ?, nationality = ?, gender = ? WHERE idProof = ?";
+        String sql = "UPDATE customercheckin SET cutomerName = ?, address = ?, mobileNumber = ?, nationality = ?, gender = ? WHERE idProof = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
 
         ps.setString(1, customerName);
@@ -97,7 +97,7 @@ public class CustomerCheckInModel {
 
     public boolean deleteRoomAllocation() throws SQLException, Exception {
         Connection connection = RegistrationConnection.getDatabaseConnection();
-        String sql = "DELETE * FROM customercheckin WHERE idProof = ?";
+        String sql = "DELETE FROM customercheckin WHERE idProof = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
 
         ps.setString(1, idProof);
