@@ -80,11 +80,11 @@ public class CustomerCheckInView extends JFrame {
          allocateRoomButton.addActionListener(listener);
     }
 
-    public void updateRoomButtonListener(ActionListener listener) {
+    public void updateAllocatedRoomButtonListener(ActionListener listener) {
         updateAllocationButton.addActionListener(listener);
     }
 
-    public void deleteRoomButtonListener(ActionListener listener) {
+    public void deleteAllocatedRoomButtonListener(ActionListener listener) {
         deleteAllocationButton.addActionListener(listener);
     }
 

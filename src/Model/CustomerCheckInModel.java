@@ -59,31 +59,51 @@ public class CustomerCheckInModel {
         this.gender = gender;
     }
 
-    public void roomAllocation() {
-        try (Connection connection = RegistrationConnection.getDatabaseConnection()) {
-            String sql = "INSERT INTO customercheckin (customerName, address, mobileNumber, nationality, gender, price, roomNumber, roomType, bedType, idProof) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement ps = connection.prepareStatement(sql);
+    public boolean roomAllocation() throws SQLException, Exception {
+        Connection connection = RegistrationConnection.getDatabaseConnection();
+        String sql = "INSERT INTO customercheckin (customerName, address, mobileNumber, nationality, gender, price, roomNumber, roomType, bedType, idProof) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement ps = connection.prepareStatement(sql);
 
-            ps.setString(1, customerName);
-            ps.setString(2, address);
-            ps.setString(3, mobileNumber);
-            ps.setString(4, nationality);
-            ps.setString(5, gender);
-            ps.setDouble(6, price);
-            ps.setInt(7, roomNumber);
-            ps.setString(8, roomType);
-            ps.setString(9, bedType);
-            ps.setString(10, idProof);
+        ps.setString(1, customerName);
+        ps.setString(2, address);
+        ps.setString(3, mobileNumber);
+        ps.setString(4, nationality);
+        ps.setString(5, gender);
+        ps.setDouble(6, price);
+        ps.setInt(7, roomNumber);
+        ps.setString(8, roomType);
+        ps.setString(9, bedType);
+        ps.setString(10, idProof);
 
-            ps.executeUpdate();
+        int rowsInserted = ps.executeUpdate();
+        return rowsInserted > 0;
+    }
 
-            JOptionPane.showMessageDialog(null, "Successful", "room allocated successfully", JOptionPane.INFORMATION_MESSAGE);
-        }
-        catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error", "failed to allocate a room", JOptionPane.ERROR_MESSAGE);
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error", "something went wrong", JOptionPane.ERROR_MESSAGE);
-        }
+    public boolean updateRoomAllocation() throws SQLException, Exception {
+        Connection connection = RegistrationConnection.getDatabaseConnection();
+        String sql = "UPDATE customercheckin cutomerName = ?, address = ?, mobileNumber = ?, nationality = ?, gender = ? WHERE idProof = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+
+        ps.setString(1, customerName);
+        ps.setString(2, address);
+        ps.setString(3, mobileNumber);
+        ps.setString(4, nationality);
+        ps.setString(5, gender);
+        ps.setString(6, idProof);
+
+        int rowsInserted = ps.executeUpdate();
+        return rowsInserted > 0;
+    }
+
+    public boolean deleteRoomAllocation() throws SQLException, Exception {
+        Connection connection = RegistrationConnection.getDatabaseConnection();
+        String sql = "DELETE * FROM customercheckin WHERE idProof = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+
+        ps.setString(1, idProof);
+
+        int rowsInserted = ps.executeUpdate();
+        return rowsInserted > 0;
     }
 }
+
