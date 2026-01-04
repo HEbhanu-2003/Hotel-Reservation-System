@@ -2,7 +2,6 @@ package Model;
 
 import MySqlConnection.RegistrationConnection;
 import View.ManageRoomsView;
-import com.mysql.cj.MysqlConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
