@@ -56,31 +56,32 @@ public class ManageRoomsModel {
     }
     public boolean updateRoom() throws SQLException, Exception {
 
-        String sql = "UPDATE managerooms SET roomType=?, bed=?, days=? ,price=? WHERE RoomNumber=?";
+        String SQL = "UPDATE managerooms SET roomType=?, bed=?, days=? ,price=? WHERE RoomNumber=?";
 
-        Connection connection = RegistrationConnection.getDatabaseConnection();
+        Connection con = RegistrationConnection.getDatabaseConnection();
 
-        PreparedStatement statement = connection.prepareStatement(sql);
+        PreparedStatement STATEMENT = con.prepareStatement(SQL);
 
-        statement.setString(1, roomType);
-        statement.setString(2, beds);
-        statement.setInt(3, days);
-        statement.setDouble(4, price);
-        statement.setInt(5, roomNumber);
+        STATEMENT.setString(1, roomType);
+        STATEMENT.setString(2, beds);
+        STATEMENT.setInt(3, days);
+        STATEMENT.setDouble(4, price);
+        STATEMENT.setInt(5, roomNumber);
 
-        int rowsInserted = statement.executeUpdate();
+        int rowsInserted = STATEMENT.executeUpdate();
         return rowsInserted > 0;
     }
+
     public boolean deleteRoom() throws SQLException, Exception {
-        String sql = "DELETE FROM managerooms WHERE roomNumber=?";
+        String SQL = "DELETE FROM managerooms WHERE roomNumber=?";
 
-        Connection connection = RegistrationConnection.getDatabaseConnection();
+        Connection con = RegistrationConnection.getDatabaseConnection();
 
-        PreparedStatement statement = connection.prepareStatement(sql);
+        PreparedStatement STATEMENT = con.prepareStatement(SQL);
 
-        statement.setInt(1, roomNumber);
+        STATEMENT.setInt(1, roomNumber);
 
-        int rowsInserted = statement.executeUpdate();
+        int rowsInserted = STATEMENT.executeUpdate();
         return rowsInserted > 0;
     }
 }

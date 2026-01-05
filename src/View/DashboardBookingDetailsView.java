@@ -10,7 +10,8 @@ public class DashboardBookingDetailsView extends JFrame {
     private JTable table2;
     private JTable table4;
 
-    public DashboardBookingDetailsView(){
+    public DashboardBookingDetailsView()
+    {
         this.setTitle("Booking Details");
         this.setSize(890,550);
         this.setVisible(true);
