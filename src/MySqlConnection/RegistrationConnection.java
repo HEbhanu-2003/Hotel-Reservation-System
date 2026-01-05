@@ -10,6 +10,11 @@ public class RegistrationConnection {
     private  static  final String USER = "root";
     private  static  final String PASSWORD = "";
 
+    private RegistrationConnection()
+    {
+    }
+
+
     public static Connection getDatabaseConnection() {
         Connection conn = null;
 
